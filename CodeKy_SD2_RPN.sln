@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35208.52
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeKy_SD2_RPN", "CodeKy_SD2_RPN.csproj", "{65D72732-AF84-492D-964C-094DE3488958}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{65D72732-AF84-492D-964C-094DE3488958}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{65D72732-AF84-492D-964C-094DE3488958}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{65D72732-AF84-492D-964C-094DE3488958}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{65D72732-AF84-492D-964C-094DE3488958}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F5E31FA3-9B44-4F04-8B70-92F2207AC9C6}
+	EndGlobalSection
+EndGlobal
