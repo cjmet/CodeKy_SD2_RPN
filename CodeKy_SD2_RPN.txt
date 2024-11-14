@@ -1,0 +1,66 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace CodeKy_SD2_RPN
+{
+    public static class Solution
+    {
+        // Line 30 "" -> " "
+        // Line 56 result = previousResult; -> result = previousResult = operand;
+        public static String Answer =
+"""
+Use Extension Methods to create a simple integer RPN like calculator that given a string of integers and operators, returns the result of the expression.
+A number followed by equal or enter will assign that number as the result.
+A number followed by an operator will perform that operation on the previous result and that number and return the new result.
+
+Examples:
+"5 = 1 +" equals 6
+"4 = 2 /" equals 2
+"3 = 4 -" equals -1
+"1 = 2 + 3 * 4 - 5 /" equals 1 ... aka: ((1 + 2) * 3 - 4) / 5
+
+Find the Answer to the following:
+"123=345+897*456/665+123-7/654+333-487*124/951+769-7/654+712*43/11-17*23+11/"
+""";
+        
+        public static String Translate(this String _inputString)
+        {
+            if (_inputString == null) throw new ArgumentNullException(nameof(_inputString));
+
+            String[] lines = _inputString.Split('\n', StringSplitOptions.TrimEntries | StringSplitOptions.RemoveEmptyEntries);
+            foreach (var line in lines)
+            {
+                String[] words = line.Split(' ', StringSplitOptions.TrimEntries | StringSplitOptions.RemoveEmptyEntries);
+                for (int i = 0; i < words.Length; i++) words[i] = words[i].OddverseOfWord();
+                _inputString = _inputString.Replace(line, String.Join(' ', words));
+            }
+
+            return _inputString;
+        }
+
+        public static String OddverseOfWord(this String _inputString)
+        {
+            String evenChars = "", oddChars = "";
+            for (int i = 0; i < _inputString.Length; i++)
+            {
+                if (i % 2 == 0) oddChars += _inputString[i];
+                else evenChars += _inputString[i];
+            }
+
+            oddChars = new string(oddChars.Reverse().ToArray());
+
+            List<char> chars = new List<char>();
+            for (int i = 0; i < oddChars.Length; i++)
+            {
+                chars.Add(oddChars[i]);
+                chars.Add(evenChars.ElementAtOrDefault(i));
+            }
+
+            String result = new String(chars.ToArray());
+            return result;
+        }
+    }
+}
